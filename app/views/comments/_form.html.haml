@@ -1,0 +1,4 @@
+= simple_form_for @pic.comment, :url => pic_comments_path(@pic), :method => :post do |f|
+	= f.text_area :body, {style: "width: 100%"}
+	%br
+	= f.submit

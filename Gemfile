@@ -32,6 +32,7 @@ gem 'simple_form', '~> 3.4'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'paperclip', '~> 5.1'
+# INCASE SHIT GOES WRONG gem uninstall bcrypt then gem install bcrypt --platform=ruby
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
@@ -46,6 +47,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do

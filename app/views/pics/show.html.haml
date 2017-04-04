@@ -17,11 +17,21 @@
 
 						.col.md-6	
 							.btn-group.pull-right
+								= link_to new_pic_comment_path(@pic), method: :get, class: "btn btn-default" do
+									%span.glyphicon.glyphicon-comment
+									= @pic.get_upvotes.size
+									= simple_form_for @pic.comment, :url => pic_comments_path(@pic), :method => :post do |f|
+										= f.text_area :body, {style: "width: 100%"}
+										%br
+										= f.submit
+									
+												
 								= link_to like_pic_path(@pic), method: :put, class: "btn btn-default" do
 									%span.glyphicon.glyphicon-thumbs-up
 									= @pic.get_upvotes.size
 
-								-if user_signed_in?
+								
+								- if user_signed_in?
 									= link_to "Edit", edit_pic_path, class: "btn btn-info"
 									= link_to "Delete", pic_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
 
